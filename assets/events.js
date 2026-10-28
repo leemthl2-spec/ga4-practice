@@ -146,4 +146,19 @@
 
      ↓ 여기 아래에 코드를 추가하세요 */
 
+  /* 미션 C-1: 카카오톡 상담 버튼 클릭 */
+  on('#kakao-chat', 'click', function () {
+    track('contact_click', { contact_method: 'kakao' });
+  });
+
+  /* 미션 C-2: 리뷰 더보기 클릭 — 클릭 시점에 새로 펼쳐질 리뷰 수 */
+  on('#review-more', 'click', function () {
+    track('review_more', { review_count: document.querySelectorAll('.review.hidden').length });
+  });
+
+  /* 미션 C-3: 상품 상세 탭 클릭 */
+  on('.tab-btn', 'click', function () {
+    track('detail_tab_click', { tab_name: this.getAttribute('data-tab') });
+  });
+
 })();
